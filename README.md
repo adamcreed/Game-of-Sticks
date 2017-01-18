@@ -7,8 +7,15 @@ The game can be played against another player or against the computer. After dec
 
 ## Release History
 
+* 0.1.0
+    * Player vs. Player implemented
 * 0.0.1
     * Work in progress
+
+## TODO
+
+* Add vs. AI option
+* Clean up messages
 
 ## About / Contact
 
