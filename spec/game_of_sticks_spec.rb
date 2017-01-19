@@ -18,4 +18,23 @@ describe 'GameOfSticks' do
       expect(game.current_turn).to eq 2
     end
   end
+
+  describe '#remove_sticks' do
+    it 'Decreases the number of sticks remaining' do
+      game.sticks_remaining = 10
+      game.remove_sticks(2)
+
+      expect(game.sticks_remaining).to eq 8
+    end
+  end
+
+  describe '#max_remove_allowed' do
+    context 'When there is fewer than three sticks remaining' do
+      it 'Adjusts the max number of sticks that can be removed' do
+        game.sticks_remaining = 2
+
+        expect(game.max_remove_allowed).to eq 2
+      end
+    end
+  end
 end
