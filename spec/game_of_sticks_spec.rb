@@ -38,3 +38,12 @@ describe 'GameOfSticks' do
     end
   end
 end
+
+describe '#is_in_bounds?' do
+  it 'Checks for an integer within certain bounds' do
+    expect(is_in_bounds?(50, 10..99)).to be true
+  end
+  it 'Returns false when an integer outside the given bounds is provided' do
+    expect(is_in_bounds?(50, 1..2)).to be false
+  end
+end

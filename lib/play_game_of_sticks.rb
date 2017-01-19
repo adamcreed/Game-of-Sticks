@@ -6,12 +6,12 @@ def main
     play_game
 
     print 'Play again? '
-    answer = ''
-    while answer.empty?
-      answer = get_yes_or_no(get_first_char)
-      print 'Please enter yes or no ' if answer.empty?
+    valid_answer = false
+    until valid_answer
+      valid_answer = get_yes_or_no(get_first_char)
+      print 'Please enter yes or no ' unless valid_answer
     end
-    play_again = play_again?(answer)
+    play_again = play_again?(valid_answer)
   end
 end
 
@@ -25,6 +25,8 @@ def play_game
 
     take_turn(game)
   end
+
+  puts "Player #{game.current_turn} wins!"
 end
 
 def take_turn(game)
@@ -38,7 +40,7 @@ def get_first_char
 end
 
 def get_yes_or_no(first_letter)
-    (first_letter == 'y' or first_letter == 'n') ? first_letter : ''
+    (first_letter == 'y' or first_letter == 'n') ? first_letter : false
 end
 
 def get_sticks_removed(game)
