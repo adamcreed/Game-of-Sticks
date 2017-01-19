@@ -30,6 +30,7 @@ end
 def take_turn(game)
   sticks_to_remove = get_sticks_removed(game)
   game.remove_sticks(sticks_to_remove)
+  game.change_turn
 end
 
 def get_first_char

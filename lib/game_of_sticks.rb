@@ -8,7 +8,8 @@ class GameOfSticks
     @stick_count = options[:stick_count]
     @sticks_remaining = @stick_count
     @max_removable_sticks = 3
-    @current_turn = rand(1..2)
+    @starting_turn = rand(1..2)
+    @current_turn = @starting_turn
   end
 
   def remove_sticks(number)
@@ -27,6 +28,10 @@ class GameOfSticks
     print "It is player #{@current_turn}'s turn. " \
           "Sticks remaining: #{@sticks_remaining}. " \
           "You can remove 1-#{max_remove_allowed} sticks: "
+  end
+
+  def change_turn
+    @current_turn == 1 ? @current_turn = 2 : @current_turn = 1
   end
 end
 
